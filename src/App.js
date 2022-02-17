@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './Components/Header';
+import FeedbackList from './Components/FeedbackList';
+import FeedbackStats from './Components/FeedbackStats';
+import FeedbackForm from './Components/FeedbackForm';
+import {FeedbackProvider} from './Context/FeedbackContext'
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <FeedbackProvider>
+      <Header />
+      <div className='container'>
+        <FeedbackForm />
+        <FeedbackStats />
+        <FeedbackList />
+      </div> 
+    </FeedbackProvider> 
+  ) 
 }
 
 export default App;
